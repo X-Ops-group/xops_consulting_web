@@ -1,0 +1,49 @@
+/* Critical production fixes
+   - Keep content visible even if JavaScript fails or is delayed.
+   - Improve logo readability on small screens. */
+
+.reveal {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.brand img {
+  width: 196px;
+  max-width: 100%;
+}
+
+.bottom-cta img {
+  width: 140px;
+  max-width: 100%;
+}
+
+@media (max-width: 720px) {
+  .site-header {
+    align-items: center;
+  }
+
+  .brand {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .brand img {
+    width: min(230px, 92vw);
+  }
+
+  .header-actions {
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .button-small {
+    width: auto;
+    min-width: 190px;
+  }
+
+  .bottom-cta img {
+    width: min(190px, 80vw);
+  }
+}
