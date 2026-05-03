@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="X-Ops Consulting helps startups, scaleups, and technical teams build secure, automated, scalable delivery operations." />
-    <meta property="og:title" content="X-Ops Consulting" />
-    <meta property="og:description" content="DevSecOps, Cloud, Kubernetes and secure automation consulting." />
+    <meta name="description" content="X-Ops Consulting agentifica empresas con agentes IA seguros, RAG gobernado, LLMOps, MLOps, DevSecOps, AIOps, cloud y automatización inteligente." />
+    <meta property="og:title" content="X-Ops Consulting | Agentic AI Operations" />
+    <meta property="og:description" content="Agentic AI Operations. Secure by Design. Agentes IA seguros, RAG seguro, LLMOps, MLOps y automatización empresarial." />
     <meta property="og:type" content="website" />
-    <title>X-Ops Consulting | Secure Delivery Operations</title>
+    <title>X-Ops Consulting | Agentic AI Operations</title>
     <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="fixes.css" />
@@ -21,6 +21,7 @@
 
         <nav class="nav" aria-label="Primary navigation">
           <a href="#services" data-i18n="nav.services">Servicios</a>
+          <a href="#security" data-i18n="nav.security">Seguridad IA</a>
           <a href="#method" data-i18n="nav.method">Método</a>
           <a href="#cases" data-i18n="nav.cases">Casos de uso</a>
           <a href="#contact" data-i18n="nav.contact">Contacto</a>
@@ -32,120 +33,199 @@
             <span class="divider">/</span>
             <span data-lang-option="en">EN</span>
           </button>
-          <a class="button button-primary button-small" href="mailto:consulting@xopsgroup.com?subject=X-Ops%20Consulting%20Discovery%20Call" data-i18n="cta.call">Agenda una llamada</a>
+          <a class="button button-primary button-small" href="mailto:consulting@xopsgroup.com?subject=X-Ops%20Consulting%20Agentic%20AI%20Discovery%20Call" data-i18n="cta.call">Agenda una llamada</a>
         </div>
       </header>
 
       <main id="top">
         <section class="hero section-grid">
           <div class="hero-copy reveal">
-            <p class="eyebrow" data-i18n="hero.eyebrow">DevSecOps · Cloud · Secure Automation</p>
-            <h1 data-i18n="hero.title">Convierte tu delivery en una operación <span>segura, automatizada y escalable.</span></h1>
-            <p class="hero-text" data-i18n="hero.text">Ayudamos a startups, scaleups y equipos técnicos a diseñar e implementar pipelines seguros, automatización confiable e infraestructura preparada para crecer.</p>
+            <p class="eyebrow" data-i18n="hero.eyebrow">Agentic AI · Secure RAG · LLMOps · MLOps</p>
+            <h1 data-i18n="hero.title">Agentic AI Operations. <span>Secure by Design.</span></h1>
+            <p class="hero-text" data-i18n="hero.text">Agentificamos empresas con agentes IA seguros, RAG gobernado, flujos LLM observables, MLOps, DevSecOps, AIOps, cloud y automatización inteligente.</p>
             <div class="hero-actions">
-              <a class="button button-primary" href="mailto:consulting@xopsgroup.com?subject=Solicitar%20diagn%C3%B3stico%20X-Ops%20Consulting" data-i18n="cta.diagnostic">Solicitar diagnóstico</a>
-              <a class="button button-secondary" href="#services" data-i18n="cta.services">Ver servicios</a>
+              <a class="button button-primary" href="mailto:consulting@xopsgroup.com?subject=Agentificar%20mi%20empresa" data-i18n="cta.agentify">Agentificar mi empresa</a>
+              <a class="button button-secondary" href="mailto:consulting@xopsgroup.com?subject=Auditar%20agentes%20IA%20y%20RAG" data-i18n="cta.audit_ai">Auditar mi IA</a>
             </div>
           </div>
 
-          <div class="hero-visual reveal" aria-label="Secure delivery dashboard illustration">
+          <div class="hero-visual reveal" aria-label="Agentic AI operations dashboard illustration">
             <div class="dashboard-frame">
               <div class="pipeline-card">
                 <div class="pipeline-step">
-                  <span>&lt;/&gt;</span>
-                  <small>Code</small>
+                  <span>↧</span>
+                  <small data-i18n="pipeline.input">Input</small>
                 </div>
                 <div class="pipeline-line"></div>
                 <div class="pipeline-step success">
                   <span>✓</span>
-                  <small>Build</small>
+                  <small data-i18n="pipeline.policy">Policy</small>
                 </div>
                 <div class="pipeline-line"></div>
                 <div class="pipeline-step success">
-                  <span>✓</span>
-                  <small>Test</small>
+                  <span>⌕</span>
+                  <small>RAG</small>
                 </div>
                 <div class="pipeline-line active"></div>
                 <div class="pipeline-step active">
-                  <span>🛡</span>
-                  <small>Scan</small>
+                  <span>◆</span>
+                  <small>LLM</small>
                 </div>
                 <div class="pipeline-line"></div>
                 <div class="pipeline-step">
-                  <span>↗</span>
-                  <small>Deploy</small>
+                  <span>⚙</span>
+                  <small data-i18n="pipeline.agent">Agent</small>
                 </div>
               </div>
 
               <div class="metric-grid">
                 <article class="metric-card">
-                  <small data-i18n="dashboard.security">Seguridad</small>
-                  <strong>0</strong>
-                  <span class="ok">OK</span>
+                  <small data-i18n="dashboard.agents">Agentes seguros</small>
+                  <strong>AI</strong>
+                  <span class="ok">SECURED</span>
                   <svg viewBox="0 0 160 48" aria-hidden="true"><path d="M4 34 L24 26 L44 33 L64 22 L84 31 L104 20 L124 23 L156 9" /></svg>
                 </article>
                 <article class="metric-card">
-                  <small data-i18n="dashboard.deployments">Despliegues</small>
-                  <strong>98%</strong>
+                  <small data-i18n="dashboard.rag">RAG verificado</small>
+                  <strong>RAG</strong>
                   <svg viewBox="0 0 160 48" aria-hidden="true"><path d="M4 38 L24 30 L44 33 L64 20 L84 24 L104 15 L124 18 L156 7" /></svg>
                 </article>
                 <article class="metric-card infra-card">
-                  <small data-i18n="dashboard.infrastructure">Infraestructura</small>
-                  <strong>K8s</strong>
-                  <span class="healthy">Healthy</span>
-                  <p><b>12</b> <span data-i18n="dashboard.nodes">nodos</span></p>
+                  <small data-i18n="dashboard.llmops">Flujos LLM</small>
+                  <strong>OPS</strong>
+                  <span class="healthy">OBSERVED</span>
+                  <p><b>24/7</b> <span data-i18n="dashboard.monitoring">monitorización</span></p>
                 </article>
               </div>
 
               <div class="tool-strip">
-                <span>Cloud</span>
-                <span>AWS</span>
-                <span>GCP</span>
-                <span>IaC</span>
-                <span data-i18n="dashboard.observability">Observabilidad</span>
-                <span data-i18n="dashboard.alerts">Alertas</span>
+                <span>Agentic AI</span>
+                <span>Secure RAG</span>
+                <span>LLMOps</span>
+                <span>MLOps</span>
+                <span>DevSecOps</span>
+                <span>AIOps</span>
               </div>
             </div>
           </div>
         </section>
 
         <section class="trust-strip" aria-label="Capabilities">
-          <span>🛡 DevSecOps</span>
-          <span>☁ Cloud & IaC</span>
-          <span>⎈ Kubernetes</span>
-          <span data-i18n="pill.training">🎓 Formación técnica</span>
+          <span data-i18n="pill.agents">🛡 Agentes IA seguros</span>
+          <span data-i18n="pill.rag">⌕ RAG gobernado</span>
+          <span data-i18n="pill.llmops">◆ LLMOps</span>
+          <span data-i18n="pill.mlops">⟳ MLOps & AIOps</span>
+        </section>
+
+        <section class="section" id="problem">
+          <div class="section-heading reveal">
+            <p class="eyebrow" data-i18n="problem.eyebrow">El problema</p>
+            <h2 data-i18n="problem.title">La mayoría de empresas están usando IA sin arquitectura.</h2>
+          </div>
+
+          <div class="card-grid three">
+            <article class="result-card reveal">
+              <div class="icon soft">⚠</div>
+              <h3 data-i18n="problem.exp.title">Experimentos aislados</h3>
+              <p data-i18n="problem.exp.text">Chatbots, prompts y automatizaciones desconectadas que no escalan ni se integran con la operación real.</p>
+            </article>
+            <article class="result-card reveal">
+              <div class="icon soft">⚙</div>
+              <h3 data-i18n="problem.agents.title">Agentes sin control</h3>
+              <p data-i18n="problem.agents.text">Agentes con permisos excesivos, tool calling sin sandboxing y trazabilidad insuficiente.</p>
+            </article>
+            <article class="result-card reveal">
+              <div class="icon soft">⌕</div>
+              <h3 data-i18n="problem.rag.title">RAG sin gobierno</h3>
+              <p data-i18n="problem.rag.text">Bases vectoriales con documentos sensibles, permisos débiles y riesgo de prompt injection documental.</p>
+            </article>
+          </div>
         </section>
 
         <section class="section" id="services">
           <div class="section-heading reveal">
             <p class="eyebrow" data-i18n="services.eyebrow">Servicios</p>
-            <h2 data-i18n="services.title">Consultoría práctica para operar con seguridad y velocidad.</h2>
+            <h2 data-i18n="services.title">Construimos la capa agentificada, segura y observable de tu organización.</h2>
           </div>
 
           <div class="card-grid four">
             <article class="service-card reveal">
+              <div class="icon">◆</div>
+              <h3 data-i18n="services.agentic.title">Agentificación empresarial</h3>
+              <p data-i18n="services.agentic.text">Diseñamos agentes IA, copilotos internos y workflows multiagente conectados a procesos, datos, APIs y herramientas internas.</p>
+              <a href="mailto:consulting@xopsgroup.com?subject=Agentificaci%C3%B3n%20empresarial" aria-label="Agentic enterprise consulting">→</a>
+            </article>
+            <article class="service-card reveal">
+              <div class="icon">🛡</div>
+              <h3 data-i18n="services.secure_agents.title">Secure AI Agents</h3>
+              <p data-i18n="services.secure_agents.text">Securizamos agentes IA con threat modeling, control de permisos, sandboxing, guardrails, auditoría y trazabilidad.</p>
+              <a href="mailto:consulting@xopsgroup.com?subject=Secure%20AI%20Agents" aria-label="Secure AI agents">→</a>
+            </article>
+            <article class="service-card reveal">
               <div class="icon">⌕</div>
-              <h3 data-i18n="services.audit.title">Auditoría DevSecOps</h3>
-              <p data-i18n="services.audit.text">Detectamos riesgos en CI/CD, dependencias, secretos, contenedores e infraestructura.</p>
-              <a href="mailto:consulting@xopsgroup.com?subject=Auditor%C3%ADa%20DevSecOps" aria-label="DevSecOps audit">→</a>
+              <h3 data-i18n="services.rag.title">Secure RAG</h3>
+              <p data-i18n="services.rag.text">Diseñamos RAG empresarial con control de acceso, clasificación documental, trazabilidad de fuentes y protección contra fugas de datos.</p>
+              <a href="mailto:consulting@xopsgroup.com?subject=Secure%20RAG" aria-label="Secure RAG">→</a>
             </article>
             <article class="service-card reveal">
-              <div class="icon">⟲</div>
-              <h3 data-i18n="services.pipelines.title">Pipelines seguros</h3>
-              <p data-i18n="services.pipelines.text">Diseñamos e implementamos flujos CI/CD con controles, quality gates y automatización.</p>
-              <a href="mailto:consulting@xopsgroup.com?subject=Pipelines%20seguros" aria-label="Secure pipelines">→</a>
+              <div class="icon">☷</div>
+              <h3 data-i18n="services.llmops.title">LLMOps</h3>
+              <p data-i18n="services.llmops.text">Operamos flujos LLM con evaluación, observabilidad, prompt registry, guardrails, testing, control de costes y red teaming.</p>
+              <a href="mailto:consulting@xopsgroup.com?subject=LLMOps" aria-label="LLMOps consulting">→</a>
             </article>
             <article class="service-card reveal">
-              <div class="icon">☁</div>
-              <h3 data-i18n="services.cloud.title">Cloud & Kubernetes</h3>
-              <p data-i18n="services.cloud.text">Arquitectura, hardening y despliegue de entornos escalables y observables.</p>
-              <a href="mailto:consulting@xopsgroup.com?subject=Cloud%20and%20Kubernetes" aria-label="Cloud and Kubernetes">→</a>
+              <div class="icon">⟳</div>
+              <h3 data-i18n="services.mlops.title">MLOps & Model Governance</h3>
+              <p data-i18n="services.mlops.text">Pipelines ML, model registry, dataset versioning, drift monitoring, despliegue seguro y gobierno del ciclo de vida del modelo.</p>
+              <a href="mailto:consulting@xopsgroup.com?subject=MLOps%20and%20Model%20Governance" aria-label="MLOps and model governance">→</a>
             </article>
             <article class="service-card reveal">
               <div class="icon">◎</div>
-              <h3 data-i18n="services.training.title">Training para equipos</h3>
-              <p data-i18n="services.training.text">Workshops y formación práctica para elevar el nivel operativo y de seguridad.</p>
-              <a href="mailto:consulting@xopsgroup.com?subject=Training%20para%20equipos" aria-label="Team training">→</a>
+              <h3 data-i18n="services.ai_security.title">AI Security & Governance</h3>
+              <p data-i18n="services.ai_security.text">Auditorías de IA, LLM red teaming, políticas internas, evaluación de proveedores, seguridad de embeddings y gobierno de riesgos.</p>
+              <a href="mailto:consulting@xopsgroup.com?subject=AI%20Security%20and%20Governance" aria-label="AI security and governance">→</a>
+            </article>
+            <article class="service-card reveal">
+              <div class="icon">⚡</div>
+              <h3 data-i18n="services.aiops.title">AIOps & Automation</h3>
+              <p data-i18n="services.aiops.text">Automatización inteligente, runbooks, clasificación de incidencias, observabilidad, alertas y respuesta asistida por IA.</p>
+              <a href="mailto:consulting@xopsgroup.com?subject=AIOps%20and%20Automation" aria-label="AIOps and automation">→</a>
+            </article>
+            <article class="service-card reveal">
+              <div class="icon">☁</div>
+              <h3 data-i18n="services.cloud.title">Cloud, DevSecOps & Platform</h3>
+              <p data-i18n="services.cloud.text">Arquitectura cloud, Kubernetes, CI/CD seguro, IaC, hardening, observabilidad y plataformas preparadas para IA en producción.</p>
+              <a href="mailto:consulting@xopsgroup.com?subject=Cloud%20DevSecOps%20Platform" aria-label="Cloud DevSecOps Platform">→</a>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="security">
+          <div class="section-heading reveal">
+            <p class="eyebrow" data-i18n="security.eyebrow">Seguridad IA</p>
+            <h2 data-i18n="security.title">Securizamos agentes, RAG, flujos LLM y modelos antes de que operen en producción.</h2>
+          </div>
+
+          <div class="card-grid four">
+            <article class="service-card reveal">
+              <div class="icon">01</div>
+              <h3 data-i18n="security.layer1.title">Agent Layer</h3>
+              <p data-i18n="security.layer1.text">Permisos mínimos, tool calling seguro, sandboxing, gestión de secretos, auditoría de acciones y controles por rol.</p>
+            </article>
+            <article class="service-card reveal">
+              <div class="icon">02</div>
+              <h3 data-i18n="security.layer2.title">Knowledge & RAG Layer</h3>
+              <p data-i18n="security.layer2.text">Clasificación documental, segmentación, permisos, DLP, trazabilidad de fuentes y defensa contra prompt injection en documentos.</p>
+            </article>
+            <article class="service-card reveal">
+              <div class="icon">03</div>
+              <h3 data-i18n="security.layer3.title">LLM Flow Layer</h3>
+              <p data-i18n="security.layer3.text">Guardrails, prompt registry, evaluación continua, routing de modelos, validación de salida, logging y control de costes.</p>
+            </article>
+            <article class="service-card reveal">
+              <div class="icon">04</div>
+              <h3 data-i18n="security.layer4.title">Model Lifecycle Layer</h3>
+              <p data-i18n="security.layer4.text">Pipelines ML seguros, versionado de datasets, model registry, monitorización de drift, despliegue controlado y gobierno.</p>
             </article>
           </div>
         </section>
@@ -153,24 +233,39 @@
         <section class="section method" id="method">
           <div class="section-heading reveal">
             <p class="eyebrow" data-i18n="method.eyebrow">Método</p>
-            <h2 data-i18n="method.title">Tres pasos. Sin humo. Con entregables claros.</h2>
+            <h2 data-i18n="method.title">X-Ops Agentic SecureOps Framework.</h2>
           </div>
 
           <div class="steps">
             <article class="step reveal">
               <span>1</span>
-              <h3 data-i18n="method.step1.title">Diagnóstico</h3>
-              <p data-i18n="method.step1.text">Analizamos tu operación actual y detectamos brechas, fricción y riesgos.</p>
+              <h3 data-i18n="method.step1.title">Discover</h3>
+              <p data-i18n="method.step1.text">Identificamos procesos, sistemas, datos, riesgos y oportunidades reales de agentificación.</p>
             </article>
             <article class="step reveal">
               <span>2</span>
-              <h3 data-i18n="method.step2.title">Plan de acción</h3>
-              <p data-i18n="method.step2.text">Diseñamos una hoja de ruta priorizada con impacto rápido y sostenible.</p>
+              <h3 data-i18n="method.step2.title">Architect</h3>
+              <p data-i18n="method.step2.text">Diseñamos la arquitectura agentic AI, RAG, LLMOps, MLOps, integración, seguridad y gobierno.</p>
             </article>
             <article class="step reveal">
               <span>3</span>
-              <h3 data-i18n="method.step3.title">Implementación</h3>
-              <p data-i18n="method.step3.text">Implementamos, automatizamos y transferimos conocimiento al equipo.</p>
+              <h3 data-i18n="method.step3.title">Secure</h3>
+              <p data-i18n="method.step3.text">Aplicamos threat modeling, permisos, guardrails, trazabilidad, políticas y controles de seguridad.</p>
+            </article>
+            <article class="step reveal">
+              <span>4</span>
+              <h3 data-i18n="method.step4.title">Build</h3>
+              <p data-i18n="method.step4.text">Construimos agentes, conectores, pipelines, automatizaciones, dashboards y flujos LLM.</p>
+            </article>
+            <article class="step reveal">
+              <span>5</span>
+              <h3 data-i18n="method.step5.title">Operate</h3>
+              <p data-i18n="method.step5.text">Desplegamos, observamos, medimos calidad, costes, latencia, seguridad y rendimiento.</p>
+            </article>
+            <article class="step reveal">
+              <span>6</span>
+              <h3 data-i18n="method.step6.title">Evolve</h3>
+              <p data-i18n="method.step6.text">Iteramos agentes, prompts, datasets, modelos, workflows y controles para mejorar de forma continua.</p>
             </article>
           </div>
         </section>
@@ -178,24 +273,24 @@
         <section class="section" id="cases">
           <div class="section-heading reveal">
             <p class="eyebrow" data-i18n="results.eyebrow">Resultados</p>
-            <h2 data-i18n="results.title">Resultados que generamos.</h2>
+            <h2 data-i18n="results.title">De experimentos de IA a operaciones agentificadas.</h2>
           </div>
 
           <div class="card-grid three">
             <article class="result-card reveal">
-              <div class="icon soft">🛡</div>
-              <h3 data-i18n="results.risk.title">Menos riesgo</h3>
-              <p data-i18n="results.risk.text">Menos vulnerabilidades, mejores controles y cumplimiento continuo.</p>
+              <div class="icon soft">◆</div>
+              <h3 data-i18n="results.ops.title">Operaciones inteligentes</h3>
+              <p data-i18n="results.ops.text">Procesos asistidos por agentes IA, automatización y conocimiento empresarial conectado de forma segura.</p>
             </article>
             <article class="result-card reveal">
-              <div class="icon soft">⚡</div>
-              <h3 data-i18n="results.speed.title">Más velocidad</h3>
-              <p data-i18n="results.speed.text">Pipelines más rápidos y confiables que aceleran tu time to market.</p>
+              <div class="icon soft">🛡</div>
+              <h3 data-i18n="results.risk.title">Menos riesgo IA</h3>
+              <p data-i18n="results.risk.text">Menos exposición de datos, mejores controles de permisos, seguridad en agentes y protección del flujo LLM/RAG.</p>
             </article>
             <article class="result-card reveal">
               <div class="icon soft">🎯</div>
               <h3 data-i18n="results.control.title">Más control</h3>
-              <p data-i18n="results.control.text">Observabilidad y automatización para operar con confianza.</p>
+              <p data-i18n="results.control.text">Observabilidad, evaluación, versionado, gobierno y métricas para operar IA con criterio empresarial.</p>
             </article>
           </div>
         </section>
@@ -203,10 +298,10 @@
         <section class="bottom-cta reveal" id="contact">
           <img src="assets/logo.svg" alt="" />
           <div>
-            <h2 data-i18n="bottom.title">¿Listo para profesionalizar tus operaciones?</h2>
-            <p data-i18n="bottom.text">Empezamos con una sesión de diagnóstico y una propuesta clara para avanzar sin humo.</p>
+            <h2 data-i18n="bottom.title">¿Listo para agentificar tu empresa con seguridad?</h2>
+            <p data-i18n="bottom.text">Empezamos con una sesión de diagnóstico para identificar procesos agentificables, riesgos IA y quick wins de alto impacto.</p>
           </div>
-          <a class="button button-light" href="mailto:consulting@xopsgroup.com?subject=Hablar%20con%20X-Ops%20Consulting" data-i18n="bottom.cta">Hablar con X-Ops Consulting</a>
+          <a class="button button-light" href="mailto:consulting@xopsgroup.com?subject=Hablar%20con%20X-Ops%20Consulting%20sobre%20Agentic%20AI" data-i18n="bottom.cta">Hablar con X-Ops Consulting</a>
         </section>
       </main>
 
