@@ -1,6 +1,6 @@
 # X-Ops Consulting Landing
 
-Bilingual landing page for **X-Ops Consulting**, designed as a clean continuation of the X-Ops brand.
+Bilingual landing page for **X-Ops Consulting**, designed as a clean continuation of the X-Ops brand under **X-Ops Group**.
 
 ## What is included
 
@@ -11,6 +11,13 @@ Bilingual landing page for **X-Ops Consulting**, designed as a clean continuatio
 - SVG brand mark included in `assets/logo.svg`.
 - GitHub Pages workflow.
 - No backend required.
+
+## Recommended brand architecture
+
+- Main group domain: `xopsgroup.com`
+- Consulting landing: `xopsgroup.com/consulting`
+- Editorial and press: `xops.media`
+- Commercial email: `consulting@xopsgroup.com`
 
 ## Quick start
 
@@ -32,10 +39,6 @@ npm run preview
 
 This can be deployed directly to GitHub Pages, Netlify, Vercel, Cloudflare Pages, or any static hosting.
 
-## Recommended repo name
+## Contact links
 
-`xops-consulting-web`
-
-## Contact form
-
-The CTAs currently point to `mailto:hello@xopsconsulting.com`. Replace that address in `index.html` when the final mailbox is ready.
+The CTAs currently point to `mailto:consulting@xopsgroup.com`.
