@@ -199,18 +199,39 @@ const setLanguage = (lang) => {
     }
   });
   languageOptions.forEach((option) => {
-    option.dataset.active = String(option.dataset.langOption === lang);
+    const isActive = option.dataset.langOption === lang;
+    option.dataset.active = String(isActive);
+    option.setAttribute("aria-pressed", String(isActive));
   });
   localStorage.setItem("xops-language", lang);
 };
 
-languageToggle?.addEventListener("click", () => {
+languageOptions.forEach((option) => {
+  option.setAttribute("role", "button");
+  option.setAttribute("tabindex", "0");
+  option.addEventListener("click", (event) => {
+    event.stopPropagation();
+    setLanguage(option.dataset.langOption);
+  });
+  option.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      setLanguage(option.dataset.langOption);
+    }
+  });
+});
+
+languageToggle?.addEventListener("click", (event) => {
+  if (event.target?.matches?.("[data-lang-option]")) {
+    return;
+  }
   const current = localStorage.getItem("xops-language") || "es";
   setLanguage(current === "es" ? "en" : "es");
 });
 
-const preferredLanguage = localStorage.getItem("xops-language") || (navigator.language?.startsWith("en") ? "en" : "es");
-setLanguage(preferredLanguage);
+const storedLanguage = localStorage.getItem("xops-language");
+const browserLanguage = navigator.language?.startsWith("en") ? "en" : "es";
+setLanguage(storedLanguage || browserLanguage);
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
