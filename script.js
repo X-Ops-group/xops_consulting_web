@@ -225,36 +225,34 @@ const setLanguage = (lang) => {
     option.setAttribute("aria-pressed", String(isActive));
   });
 
-  languageToggle?.setAttribute("aria-label", normalizedLang === "es" ? "Cambiar idioma" : "Switch language");
+  languageToggle?.setAttribute("aria-label", normalizedLang === "es" ? "Selector de idioma" : "Language selector");
   safeStorage.set("xops-language", normalizedLang);
 };
 
+const chooseLanguage = (event) => {
+  const option = event.currentTarget;
+  const lang = option?.dataset?.langOption;
+  if (!lang) return;
+  event.preventDefault();
+  event.stopPropagation();
+  setLanguage(lang);
+};
+
 languageOptions.forEach((option) => {
-  option.setAttribute("role", "button");
-  option.setAttribute("tabindex", "0");
-  option.addEventListener("click", (event) => {
-    event.stopPropagation();
-    setLanguage(option.dataset.langOption);
-  });
+  option.addEventListener("click", chooseLanguage);
+  option.addEventListener("pointerup", chooseLanguage);
+  option.addEventListener("touchend", chooseLanguage, { passive: false });
   option.addEventListener("keydown", (event) => {
     if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      setLanguage(option.dataset.langOption);
+      chooseLanguage(event);
     }
   });
 });
 
-languageToggle?.addEventListener("click", (event) => {
-  if (event.target?.matches?.("[data-lang-option]")) {
-    return;
-  }
-  const current = document.documentElement.lang || safeStorage.get("xops-language") || "es";
-  setLanguage(current === "es" ? "en" : "es");
-});
-
+const queryLanguage = new URLSearchParams(window.location.search).get("lang");
 const storedLanguage = safeStorage.get("xops-language");
 const browserLanguage = navigator.language?.startsWith("en") ? "en" : "es";
-setLanguage(storedLanguage || browserLanguage);
+setLanguage(translations[queryLanguage] ? queryLanguage : storedLanguage || browserLanguage);
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
