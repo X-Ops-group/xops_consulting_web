@@ -1,20 +1,80 @@
-/* Critical production fixes
+/* Production safeguards
    - Keep content visible even if JavaScript fails or is delayed.
-   - Improve logo readability on small screens. */
+   - Avoid logo/header clipping across desktop, tablet and mobile.
+*/
 
 .reveal {
   opacity: 1 !important;
   transform: none !important;
 }
 
+.site-header {
+  min-width: 0;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  min-width: 0;
+  overflow: visible;
+}
+
 .brand img {
-  width: 196px;
-  max-width: 100%;
+  display: block;
+  width: clamp(170px, 15vw, 230px);
+  max-width: none;
+  height: auto;
+  object-fit: contain;
+  overflow: visible;
+}
+
+.nav {
+  min-width: 0;
+}
+
+.header-actions {
+  flex: 0 0 auto;
+  min-width: max-content;
+}
+
+.language-toggle {
+  white-space: nowrap;
 }
 
 .bottom-cta img {
   width: 140px;
   max-width: 100%;
+}
+
+@media (max-width: 1240px) {
+  .brand img {
+    width: 178px;
+  }
+
+  .nav {
+    gap: 18px;
+    font-size: 0.86rem;
+  }
+
+  .button-small {
+    min-width: 0;
+    padding-inline: 14px;
+  }
+}
+
+@media (max-width: 1120px) {
+  .site-header {
+    align-items: center;
+  }
+
+  .brand img {
+    width: min(230px, 70vw);
+  }
+
+  .header-actions {
+    margin-left: auto;
+  }
 }
 
 @media (max-width: 720px) {
@@ -24,18 +84,19 @@
 
   .brand {
     width: 100%;
-    display: flex;
     justify-content: center;
   }
 
   .brand img {
-    width: min(230px, 92vw);
+    width: min(245px, 88vw);
   }
 
   .header-actions {
+    width: 100%;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    margin-left: 0;
   }
 
   .button-small {
@@ -45,5 +106,12 @@
 
   .bottom-cta img {
     width: min(190px, 80vw);
+  }
+}
+
+@media (max-width: 430px) {
+  .button-small {
+    width: 100%;
+    min-width: 0;
   }
 }
