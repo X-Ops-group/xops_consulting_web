@@ -185,25 +185,48 @@ const translations = {
   }
 };
 
+const safeStorage = {
+  get(key) {
+    try {
+      return window.localStorage.getItem(key);
+    } catch {
+      return null;
+    }
+  },
+  set(key, value) {
+    try {
+      window.localStorage.setItem(key, value);
+    } catch {
+      return undefined;
+    }
+  }
+};
+
 const languageToggle = document.querySelector(".language-toggle");
 const languageOptions = document.querySelectorAll("[data-lang-option]");
 const translatableElements = document.querySelectorAll("[data-i18n]");
 
 const setLanguage = (lang) => {
-  const dictionary = translations[lang] || translations.es;
-  document.documentElement.lang = lang;
+  const normalizedLang = translations[lang] ? lang : "es";
+  const dictionary = translations[normalizedLang];
+
+  document.documentElement.lang = normalizedLang;
+
   translatableElements.forEach((element) => {
     const key = element.dataset.i18n;
-    if (dictionary[key]) {
+    if (Object.prototype.hasOwnProperty.call(dictionary, key)) {
       element.innerHTML = dictionary[key];
     }
   });
+
   languageOptions.forEach((option) => {
-    const isActive = option.dataset.langOption === lang;
+    const isActive = option.dataset.langOption === normalizedLang;
     option.dataset.active = String(isActive);
     option.setAttribute("aria-pressed", String(isActive));
   });
-  localStorage.setItem("xops-language", lang);
+
+  languageToggle?.setAttribute("aria-label", normalizedLang === "es" ? "Cambiar idioma" : "Switch language");
+  safeStorage.set("xops-language", normalizedLang);
 };
 
 languageOptions.forEach((option) => {
@@ -225,11 +248,11 @@ languageToggle?.addEventListener("click", (event) => {
   if (event.target?.matches?.("[data-lang-option]")) {
     return;
   }
-  const current = localStorage.getItem("xops-language") || "es";
+  const current = document.documentElement.lang || safeStorage.get("xops-language") || "es";
   setLanguage(current === "es" ? "en" : "es");
 });
 
-const storedLanguage = localStorage.getItem("xops-language");
+const storedLanguage = safeStorage.get("xops-language");
 const browserLanguage = navigator.language?.startsWith("en") ? "en" : "es";
 setLanguage(storedLanguage || browserLanguage);
 
