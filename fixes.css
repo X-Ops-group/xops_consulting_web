@@ -39,7 +39,40 @@
 }
 
 .language-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.language-option {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-weight: 900;
+  padding: 8px 6px;
+  min-width: 38px;
+  border-radius: 999px;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.language-option[data-active="true"] {
+  color: var(--blue-600);
+  background: rgba(13, 71, 255, 0.08);
+}
+
+.language-option:focus-visible {
+  outline: 2px solid var(--blue-600);
+  outline-offset: 2px;
 }
 
 .bottom-cta img {
