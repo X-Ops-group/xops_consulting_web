@@ -185,6 +185,43 @@ const translations = {
   }
 };
 
+const consultingSolutions = {
+  es: {
+    nav: "Consultoría",
+    eyebrow: "Consultoría especializada",
+    title: "Soluciones de consultoría para equipos que construyen, operan y regulan tecnología crítica.",
+    intro: "Diseñamos engagements claros, accionables y medibles para seguridad cloud-native, IA, supply chain, platform engineering, cumplimiento regulatorio y capacitación práctica.",
+    cta: "Solicitar este servicio",
+    cards: [
+      { icon: "▱", title: "Threat Modelling & Attack Trees", text: "Modelado de amenazas para Kubernetes, cloud, plataformas, agentes IA, RAG, APIs y flujos críticos. Entregamos attack trees, controles, riesgos priorizados y roadmap de remediación.", tags: ["Kubernetes", "Cloud", "AI Agents", "Attack Trees"] },
+      { icon: "AI", title: "AI Security, Secure Agents & MLSecOps", text: "Evaluamos y securizamos sistemas IA: agentes, tool calling, RAG, LLM flows, MLOps pipelines, data supply chain, guardrails, red teaming y privacidad.", tags: ["AI Security", "Secure RAG", "LLMOps", "MLOps"] },
+      { icon: "⚙", title: "Platform Engineering & DevEx", text: "Aceleramos plataformas internas con golden paths, Kubernetes, IaC, CI/CD, observabilidad, developer portals, automatización y experiencia de desarrollo segura.", tags: ["DevEx", "Platform", "K8s", "IaC"] },
+      { icon: "§", title: "Regulatory & Secure OSS Compliance", text: "Asesoría para regulación y cumplimiento en Europa, UAE y USA: CRA, NIS2, DORA, AI governance, OSS compliance, SBOM, VEX, evidencias y controles auditables.", tags: ["EU", "UAE", "USA", "Compliance"] },
+      { icon: "☁", title: "Cloud-Native Security Assurance", text: "Assurance para cloud, Kubernetes, containers y workloads modernos: hardening, posture review, runtime security, IAM, red, secretos, logging y respuesta.", tags: ["Cloud", "Containers", "Runtime", "IAM"] },
+      { icon: "◇", title: "Trusted Advisory & Regulatory Assurance", text: "Acompañamiento ejecutivo para C-Level, CTO, CISO y equipos técnicos: estrategia, arquitectura, GRC, auditorías, due diligence, roadmap y gobierno operativo.", tags: ["Advisory", "GRC", "Roadmap", "Assurance"] },
+      { icon: "🎓", title: "Practical Technical Coaching", text: "Formación práctica para equipos en DevSecOps, Kubernetes, cloud security, OSDO, supply chain, AI security, LLMOps, MLOps y automatización segura.", tags: ["Training", "Labs", "Workshops", "Coaching"] },
+      { icon: "⛓", title: "Software Supply Chain Security & OSDO", text: "Servicio estratégico basado en OSDO para asegurar de punta a punta: ingesta OSS, SBOM, SCA, SLSA, Sigstore/Cosign, attestations, policy-as-code y promotion gates.", tags: ["OSDO", "SBOM", "SLSA", "Policy-as-Code"] }
+    ]
+  },
+  en: {
+    nav: "Consulting",
+    eyebrow: "Specialized consulting",
+    title: "Consulting solutions for teams building, operating and regulating critical technology.",
+    intro: "We design clear, actionable and measurable engagements for cloud-native security, AI, supply chain, platform engineering, regulatory compliance and practical enablement.",
+    cta: "Request this service",
+    cards: [
+      { icon: "▱", title: "Threat Modelling & Attack Trees", text: "Threat modelling for Kubernetes, cloud, platforms, AI agents, RAG, APIs and critical flows. We deliver attack trees, controls, prioritised risks and remediation roadmaps.", tags: ["Kubernetes", "Cloud", "AI Agents", "Attack Trees"] },
+      { icon: "AI", title: "AI Security, Secure Agents & MLSecOps", text: "We assess and secure AI systems: agents, tool calling, RAG, LLM flows, MLOps pipelines, data supply chains, guardrails, red teaming and privacy.", tags: ["AI Security", "Secure RAG", "LLMOps", "MLOps"] },
+      { icon: "⚙", title: "Platform Engineering & DevEx", text: "We accelerate internal platforms with golden paths, Kubernetes, IaC, CI/CD, observability, developer portals, automation and secure developer experience.", tags: ["DevEx", "Platform", "K8s", "IaC"] },
+      { icon: "§", title: "Regulatory & Secure OSS Compliance", text: "Advisory for Europe, UAE and USA regulatory readiness: CRA, NIS2, DORA, AI governance, OSS compliance, SBOM, VEX, evidence and auditable controls.", tags: ["EU", "UAE", "USA", "Compliance"] },
+      { icon: "☁", title: "Cloud-Native Security Assurance", text: "Assurance for cloud, Kubernetes, containers and modern workloads: hardening, posture review, runtime security, IAM, networking, secrets, logging and response.", tags: ["Cloud", "Containers", "Runtime", "IAM"] },
+      { icon: "◇", title: "Trusted Advisory & Regulatory Assurance", text: "Executive support for C-Level, CTO, CISO and technical teams: strategy, architecture, GRC, audits, due diligence, roadmaps and operational governance.", tags: ["Advisory", "GRC", "Roadmap", "Assurance"] },
+      { icon: "🎓", title: "Practical Technical Coaching", text: "Hands-on enablement for teams in DevSecOps, Kubernetes, cloud security, OSDO, supply chain, AI security, LLMOps, MLOps and secure automation.", tags: ["Training", "Labs", "Workshops", "Coaching"] },
+      { icon: "⛓", title: "Software Supply Chain Security & OSDO", text: "A strategic OSDO-based service to secure the full lifecycle: OSS ingestion, SBOM, SCA, SLSA, Sigstore/Cosign, attestations, policy-as-code and promotion gates.", tags: ["OSDO", "SBOM", "SLSA", "Policy-as-Code"] }
+    ]
+  }
+};
+
 const safeStorage = {
   get(key) {
     try {
@@ -206,6 +243,54 @@ const languageToggle = document.querySelector(".language-toggle");
 const languageOptions = document.querySelectorAll("[data-lang-option]");
 const translatableElements = document.querySelectorAll("[data-i18n]");
 
+const renderConsultingSolutions = (lang) => {
+  const dictionary = consultingSolutions[lang] || consultingSolutions.es;
+  const servicesSection = document.querySelector("#services");
+  if (!servicesSection) return;
+
+  let section = document.querySelector("#consulting");
+  if (!section) {
+    section = document.createElement("section");
+    section.className = "section consulting-solutions reveal is-visible";
+    section.id = "consulting";
+    servicesSection.insertAdjacentElement("afterend", section);
+  }
+
+  section.innerHTML = `
+    <div class="section-heading reveal is-visible">
+      <p class="eyebrow">${dictionary.eyebrow}</p>
+      <h2>${dictionary.title}</h2>
+      <p class="consulting-intro">${dictionary.intro}</p>
+    </div>
+    <div class="card-grid four consulting-grid">
+      ${dictionary.cards.map((card) => `
+        <article class="service-card consulting-card reveal is-visible">
+          <div class="icon">${card.icon}</div>
+          <h3>${card.title}</h3>
+          <p>${card.text}</p>
+          <div class="solution-tags">
+            ${card.tags.map((tag) => `<span>${tag}</span>`).join("")}
+          </div>
+          <a href="mailto:consulting@xopsgroup.com?subject=${encodeURIComponent(card.title)}" aria-label="${dictionary.cta}: ${card.title}">→</a>
+        </article>
+      `).join("")}
+    </div>
+  `;
+};
+
+const ensureConsultingNav = (lang) => {
+  const nav = document.querySelector(".nav");
+  const securityLink = document.querySelector('.nav a[href="#security"]');
+  if (!nav || !securityLink) return;
+  let consultingLink = document.querySelector('.nav a[href="#consulting"]');
+  if (!consultingLink) {
+    consultingLink = document.createElement("a");
+    consultingLink.href = "#consulting";
+    nav.insertBefore(consultingLink, securityLink);
+  }
+  consultingLink.textContent = (consultingSolutions[lang] || consultingSolutions.es).nav;
+};
+
 const setLanguage = (lang) => {
   const normalizedLang = translations[lang] ? lang : "es";
   const dictionary = translations[normalizedLang];
@@ -225,6 +310,8 @@ const setLanguage = (lang) => {
     option.setAttribute("aria-pressed", String(isActive));
   });
 
+  renderConsultingSolutions(normalizedLang);
+  ensureConsultingNav(normalizedLang);
   languageToggle?.setAttribute("aria-label", normalizedLang === "es" ? "Selector de idioma" : "Language selector");
   safeStorage.set("xops-language", normalizedLang);
 };
