@@ -222,6 +222,51 @@ const consultingSolutions = {
   }
 };
 
+const resourceHub = {
+  es: {
+    nav: "Recursos",
+    eyebrow: "X-Ops Press & Resources",
+    title: "Ideas, manifiestos y guías para construir operaciones seguras, automatizadas y agentificadas.",
+    intro: "Este hub reunirá los PDFs fundacionales de X-Ops Press, material de OSDO, playbooks técnicos, briefings regulatorios y contenido práctico para equipos de ingeniería, seguridad y liderazgo.",
+    cta: "Solicitar recurso",
+    featured: {
+      label: "X-Ops Press",
+      title: "Manifiestos fundacionales en PDF",
+      text: "La primera colección de X-Ops Press estará formada por manifiestos, principios operativos y documentos de posicionamiento sobre Secure Delivery, OSDO, Agentic AI Operations y seguridad aplicada.",
+      status: "PDF · En preparación"
+    },
+    cards: [
+      { icon: "☷", title: "OSDO Resource Center", text: "Recursos sobre Open SecDevOps como filosofía, framework y práctica: etapas, controles, pipelines, IaC, supply chain, observabilidad y operación segura.", status: "Framework", tags: ["OSDO", "DevSecOps", "IaC", "Pipelines"] },
+      { icon: "📄", title: "X-Ops Manifestos", text: "PDFs editoriales con principios de marca, visión de Secure Delivery, automatización segura, agentificación empresarial y cultura operativa moderna.", status: "PDF", tags: ["X-Ops Press", "Manifestos", "Strategy"] },
+      { icon: "⛓", title: "Software Supply Chain Playbooks", text: "Guías para SBOM, SCA, firma de artefactos, SLSA, provenance, attestations, policy-as-code y promoción segura entre entornos.", status: "Playbook", tags: ["SBOM", "SLSA", "Cosign", "Policy"] },
+      { icon: "AI", title: "Secure AI & Agentic Ops Notes", text: "Notas técnicas para agentes IA, RAG seguro, LLMOps, MLOps, guardrails, AI red teaming, trazabilidad y gobierno del ciclo de vida IA.", status: "Research", tags: ["AI Security", "RAG", "LLMOps", "MLOps"] },
+      { icon: "§", title: "Regulatory Briefings", text: "Briefings para Europa, UAE y USA sobre CRA, NIS2, DORA, AI governance, OSS compliance, evidencias auditables y preparación regulatoria.", status: "Briefing", tags: ["EU", "UAE", "USA", "Compliance"] },
+      { icon: "🎓", title: "Labs, Workshops & Field Guides", text: "Material práctico para formación técnica: laboratorios, checklist de hardening, ejercicios de threat modelling, CTFs y tabletop exercises.", status: "Training", tags: ["Labs", "Workshops", "CTF", "TTX"] }
+    ]
+  },
+  en: {
+    nav: "Resources",
+    eyebrow: "X-Ops Press & Resources",
+    title: "Ideas, manifestos and guides for secure, automated and agentic operations.",
+    intro: "This hub will collect X-Ops Press foundational PDFs, OSDO material, technical playbooks, regulatory briefings and practical content for engineering, security and leadership teams.",
+    cta: "Request resource",
+    featured: {
+      label: "X-Ops Press",
+      title: "Foundational manifestos in PDF",
+      text: "The first X-Ops Press collection will include manifestos, operating principles and positioning papers on Secure Delivery, OSDO, Agentic AI Operations and applied security.",
+      status: "PDF · In preparation"
+    },
+    cards: [
+      { icon: "☷", title: "OSDO Resource Center", text: "Resources on Open SecDevOps as a philosophy, framework and practice: stages, controls, pipelines, IaC, supply chain, observability and secure operations.", status: "Framework", tags: ["OSDO", "DevSecOps", "IaC", "Pipelines"] },
+      { icon: "📄", title: "X-Ops Manifestos", text: "Editorial PDFs with brand principles, Secure Delivery vision, secure automation, enterprise agentification and modern operational culture.", status: "PDF", tags: ["X-Ops Press", "Manifestos", "Strategy"] },
+      { icon: "⛓", title: "Software Supply Chain Playbooks", text: "Guides for SBOM, SCA, artifact signing, SLSA, provenance, attestations, policy-as-code and safe promotion between environments.", status: "Playbook", tags: ["SBOM", "SLSA", "Cosign", "Policy"] },
+      { icon: "AI", title: "Secure AI & Agentic Ops Notes", text: "Technical notes for AI agents, secure RAG, LLMOps, MLOps, guardrails, AI red teaming, traceability and AI lifecycle governance.", status: "Research", tags: ["AI Security", "RAG", "LLMOps", "MLOps"] },
+      { icon: "§", title: "Regulatory Briefings", text: "Briefings for Europe, UAE and USA on CRA, NIS2, DORA, AI governance, OSS compliance, auditable evidence and regulatory readiness.", status: "Briefing", tags: ["EU", "UAE", "USA", "Compliance"] },
+      { icon: "🎓", title: "Labs, Workshops & Field Guides", text: "Practical enablement material: labs, hardening checklists, threat modelling exercises, CTFs and tabletop exercises.", status: "Training", tags: ["Labs", "Workshops", "CTF", "TTX"] }
+    ]
+  }
+};
+
 const safeStorage = {
   get(key) {
     try {
@@ -278,6 +323,53 @@ const renderConsultingSolutions = (lang) => {
   `;
 };
 
+const renderResourceHub = (lang) => {
+  const dictionary = resourceHub[lang] || resourceHub.es;
+  const anchorSection = document.querySelector("#consulting") || document.querySelector("#services");
+  if (!anchorSection) return;
+
+  let section = document.querySelector("#resources");
+  if (!section) {
+    section = document.createElement("section");
+    section.className = "section resources-hub reveal is-visible";
+    section.id = "resources";
+    anchorSection.insertAdjacentElement("afterend", section);
+  }
+
+  section.innerHTML = `
+    <div class="section-heading reveal is-visible">
+      <p class="eyebrow">${dictionary.eyebrow}</p>
+      <h2>${dictionary.title}</h2>
+      <p class="consulting-intro">${dictionary.intro}</p>
+    </div>
+    <article class="resources-featured reveal is-visible">
+      <div class="resources-mark">XP</div>
+      <div>
+        <span class="resource-status">${dictionary.featured.label}</span>
+        <h3>${dictionary.featured.title}</h3>
+        <p>${dictionary.featured.text}</p>
+      </div>
+      <a class="button button-secondary" href="mailto:consulting@xopsgroup.com?subject=${encodeURIComponent(dictionary.featured.title)}">${dictionary.featured.status}</a>
+    </article>
+    <div class="card-grid three resources-grid">
+      ${dictionary.cards.map((card) => `
+        <article class="resource-card reveal is-visible">
+          <div class="resource-card-top">
+            <div class="icon">${card.icon}</div>
+            <span class="resource-status">${card.status}</span>
+          </div>
+          <h3>${card.title}</h3>
+          <p>${card.text}</p>
+          <div class="solution-tags">
+            ${card.tags.map((tag) => `<span>${tag}</span>`).join("")}
+          </div>
+          <a href="mailto:consulting@xopsgroup.com?subject=${encodeURIComponent(card.title)}" aria-label="${dictionary.cta}: ${card.title}">→</a>
+        </article>
+      `).join("")}
+    </div>
+  `;
+};
+
 const ensureConsultingNav = (lang) => {
   const nav = document.querySelector(".nav");
   const securityLink = document.querySelector('.nav a[href="#security"]');
@@ -289,6 +381,19 @@ const ensureConsultingNav = (lang) => {
     nav.insertBefore(consultingLink, securityLink);
   }
   consultingLink.textContent = (consultingSolutions[lang] || consultingSolutions.es).nav;
+};
+
+const ensureResourcesNav = (lang) => {
+  const nav = document.querySelector(".nav");
+  const contactLink = document.querySelector('.nav a[href="#contact"]');
+  if (!nav || !contactLink) return;
+  let resourcesLink = document.querySelector('.nav a[href="#resources"]');
+  if (!resourcesLink) {
+    resourcesLink = document.createElement("a");
+    resourcesLink.href = "#resources";
+    nav.insertBefore(resourcesLink, contactLink);
+  }
+  resourcesLink.textContent = (resourceHub[lang] || resourceHub.es).nav;
 };
 
 const setLanguage = (lang) => {
@@ -312,6 +417,8 @@ const setLanguage = (lang) => {
 
   renderConsultingSolutions(normalizedLang);
   ensureConsultingNav(normalizedLang);
+  renderResourceHub(normalizedLang);
+  ensureResourcesNav(normalizedLang);
   languageToggle?.setAttribute("aria-label", normalizedLang === "es" ? "Selector de idioma" : "Language selector");
   safeStorage.set("xops-language", normalizedLang);
 };
