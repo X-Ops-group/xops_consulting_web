@@ -261,291 +261,137 @@
 }
 
 @media (max-width: 1240px) {
-  .brand img {
-    width: 178px;
-  }
-
-  .nav {
-    gap: 18px;
-    font-size: 0.86rem;
-  }
-
-  .button-small {
-    min-width: 0;
-    padding-inline: 14px;
-  }
+  .brand img { width: 178px; }
+  .nav { gap: 18px; font-size: 0.86rem; }
+  .button-small { min-width: 0; padding-inline: 14px; }
 }
 
 @media (max-width: 1120px) {
-  .site-header {
-    align-items: center;
-  }
-
-  .brand img {
-    width: min(230px, 70vw);
-  }
-
-  .header-actions {
-    margin-left: auto;
-  }
-
-  .resources-featured {
-    grid-template-columns: 1fr;
-    justify-items: start;
-  }
+  .site-header { align-items: center; }
+  .brand img { width: min(230px, 70vw); }
+  .header-actions { margin-left: auto; }
+  .resources-featured { grid-template-columns: 1fr; justify-items: start; }
 }
 
 @media (max-width: 720px) {
-  .site-header {
-    align-items: center;
-  }
-
-  .brand {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .brand img {
-    width: min(245px, 88vw);
-  }
-
-  .header-actions {
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-left: 0;
-  }
-
-  .button-small {
-    width: auto;
-    min-width: 190px;
-  }
-
-  .bottom-cta img {
-    width: min(190px, 80vw);
-  }
+  .site-header { align-items: center; }
+  .brand { width: 100%; justify-content: center; }
+  .brand img { width: min(245px, 88vw); }
+  .header-actions { width: 100%; align-items: center; justify-content: center; flex-wrap: wrap; margin-left: 0; }
+  .button-small { width: auto; min-width: 190px; }
+  .bottom-cta img { width: min(190px, 80vw); }
 }
 
 @media (max-width: 430px) {
-  .button-small {
-    width: 100%;
-    min-width: 0;
-  }
+  .button-small { width: 100%; min-width: 0; }
 }
 
-/* Mobile hero and dashboard overflow fixes */
 @media (max-width: 720px) {
-  .site-shell,
-  main,
-  .hero,
-  .section-grid,
-  .hero-copy,
-  .hero-visual,
-  .dashboard-frame,
-  .pipeline-card,
-  .metric-grid,
-  .metric-card,
-  .tool-strip,
-  .consulting-solutions,
-  .consulting-grid,
-  .consulting-card,
-  .resources-hub,
-  .resources-grid,
-  .resource-card,
-  .resources-featured,
-  .solution-tags {
+  .site-shell, main, .hero, .section-grid, .hero-copy, .hero-visual, .dashboard-frame, .pipeline-card, .metric-grid, .metric-card, .tool-strip, .consulting-solutions, .consulting-grid, .consulting-card, .resources-hub, .resources-grid, .resource-card, .resources-featured, .solution-tags {
     min-width: 0 !important;
     max-width: 100% !important;
     box-sizing: border-box;
   }
 
-  .site-shell {
-    width: 100% !important;
-    padding-inline: 18px;
-  }
-
-  .hero {
-    overflow: hidden;
-  }
-
-  .hero-copy {
-    width: 100%;
-    overflow: visible;
-  }
-
-  .hero .eyebrow {
-    width: 100%;
-    max-width: 100%;
-    white-space: normal;
-    overflow-wrap: anywhere;
-    word-break: normal;
-    font-size: clamp(0.68rem, 2.9vw, 0.78rem);
-    line-height: 1.5;
-    letter-spacing: 0.07em;
-  }
-
-  .hero h1 {
-    width: 100%;
-    max-width: 100% !important;
-    font-size: clamp(2rem, 9.8vw, 2.72rem) !important;
-    line-height: 1.06 !important;
-    letter-spacing: -0.058em !important;
-    white-space: normal;
-    overflow-wrap: break-word;
-    word-break: normal;
-  }
-
-  .hero h1 span {
-    display: block;
-  }
-
-  .hero-text {
-    width: 100%;
-    max-width: 100% !important;
-    white-space: normal;
-    overflow-wrap: break-word;
-    word-break: normal;
-    font-size: 1rem !important;
-    line-height: 1.65 !important;
-  }
-
-  .hero-actions {
-    width: 100%;
-  }
-
-  .hero-actions .button {
-    width: 100%;
-    min-width: 0;
-    padding-inline: 18px;
-    text-align: center;
-  }
-
-  .hero-visual {
-    width: 100%;
-    overflow: hidden;
-  }
-
-  .dashboard-frame {
-    width: 100%;
-    overflow: hidden;
-    padding: 14px !important;
-  }
-
-  .pipeline-card {
-    width: 100%;
-    overflow-x: auto !important;
-    overflow-y: hidden;
-    justify-content: flex-start !important;
-    gap: 9px;
-    padding: 14px !important;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .pipeline-step {
-    flex: 0 0 auto;
-  }
-
-  .metric-grid {
-    display: grid;
-    grid-template-columns: 1fr !important;
-    gap: 14px;
-  }
-
-  .metric-card {
-    width: 100%;
-    min-height: 0 !important;
-    padding: 18px !important;
-    overflow: hidden;
-  }
-
-  .metric-card small,
-  .metric-card strong,
-  .metric-card span,
-  .metric-card p {
-    max-width: 100%;
-    white-space: normal;
-    overflow-wrap: break-word;
-  }
-
-  .metric-card svg {
-    max-width: 100%;
-  }
-
-  .tool-strip {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap !important;
-    justify-content: flex-start;
-    overflow: visible !important;
-    padding: 12px !important;
-    gap: 9px !important;
-  }
-
-  .tool-strip span,
-  .solution-tags span {
-    flex: 0 1 auto;
-    max-width: 100%;
-    white-space: normal;
-    overflow-wrap: break-word;
-    font-size: 0.78rem !important;
-    line-height: 1.2;
-    padding: 9px 11px !important;
-  }
-
-  .consulting-solutions::before,
-  .resources-hub::before {
-    inset: 16px -12px;
-    border-radius: 24px;
-  }
-
-  .consulting-intro {
-    margin-inline: 0;
-    font-size: 0.98rem;
-  }
-
-  .consulting-card,
-  .resource-card {
-    min-height: 0;
-  }
-
-  .resources-featured {
-    padding: 22px;
-  }
-
-  .resources-mark {
-    width: 74px;
-    height: 74px;
-    border-radius: 18px;
-  }
-
-  .resources-featured .button {
-    width: 100%;
-  }
+  .site-shell { width: 100% !important; padding-inline: 18px; }
+  .hero { overflow: hidden; }
+  .hero-copy { width: 100%; overflow: visible; }
+  .hero .eyebrow { width: 100%; max-width: 100%; white-space: normal; overflow-wrap: anywhere; word-break: normal; font-size: clamp(0.68rem, 2.9vw, 0.78rem); line-height: 1.5; letter-spacing: 0.07em; }
+  .hero h1 { width: 100%; max-width: 100% !important; font-size: clamp(2rem, 9.8vw, 2.72rem) !important; line-height: 1.06 !important; letter-spacing: -0.058em !important; white-space: normal; overflow-wrap: break-word; word-break: normal; }
+  .hero h1 span { display: block; }
+  .hero-text { width: 100%; max-width: 100% !important; white-space: normal; overflow-wrap: break-word; word-break: normal; font-size: 1rem !important; line-height: 1.65 !important; }
+  .hero-actions { width: 100%; }
+  .hero-actions .button { width: 100%; min-width: 0; padding-inline: 18px; text-align: center; }
+  .hero-visual { width: 100%; overflow: hidden; }
+  .dashboard-frame { width: 100%; overflow: hidden; padding: 14px !important; }
+  .pipeline-card { width: 100%; overflow-x: auto !important; overflow-y: hidden; justify-content: flex-start !important; gap: 9px; padding: 14px !important; -webkit-overflow-scrolling: touch; }
+  .pipeline-step { flex: 0 0 auto; }
+  .metric-grid { display: grid; grid-template-columns: 1fr !important; gap: 14px; }
+  .metric-card { width: 100%; min-height: 0 !important; padding: 18px !important; overflow: hidden; }
+  .metric-card small, .metric-card strong, .metric-card span, .metric-card p { max-width: 100%; white-space: normal; overflow-wrap: break-word; }
+  .metric-card svg { max-width: 100%; }
+  .tool-strip { width: 100%; display: flex; flex-wrap: wrap !important; justify-content: flex-start; overflow: visible !important; padding: 12px !important; gap: 9px !important; }
+  .tool-strip span, .solution-tags span { flex: 0 1 auto; max-width: 100%; white-space: normal; overflow-wrap: break-word; font-size: 0.78rem !important; line-height: 1.2; padding: 9px 11px !important; }
+  .consulting-solutions::before, .resources-hub::before { inset: 16px -12px; border-radius: 24px; }
+  .consulting-intro { margin-inline: 0; font-size: 0.98rem; }
+  .consulting-card, .resource-card { min-height: 0; }
+  .resources-featured { padding: 22px; }
+  .resources-mark { width: 74px; height: 74px; border-radius: 18px; }
+  .resources-featured .button { width: 100%; }
 }
 
 @media (max-width: 430px) {
-  .site-shell {
-    padding-inline: 14px;
-  }
-
-  .hero h1 {
-    font-size: clamp(1.86rem, 9.2vw, 2.38rem) !important;
-    line-height: 1.08 !important;
-    letter-spacing: -0.052em !important;
-  }
-
-  .hero-text {
-    font-size: 0.96rem !important;
-  }
-
-  .dashboard-frame {
-    padding: 12px !important;
-    border-radius: 20px !important;
-  }
-
-  .tool-strip span,
-  .solution-tags span {
-    font-size: 0.74rem !important;
-  }
+  .site-shell { padding-inline: 14px; }
+  .hero h1 { font-size: clamp(1.86rem, 9.2vw, 2.38rem) !important; line-height: 1.08 !important; letter-spacing: -0.052em !important; }
+  .hero-text { font-size: 0.96rem !important; }
+  .dashboard-frame { padding: 12px !important; border-radius: 20px !important; }
+  .tool-strip span, .solution-tags span { font-size: 0.74rem !important; }
 }
+
+/* English fallback translations for Safari/iPad when JS partial dictionaries miss specific cards */
+html[lang="en"] [data-i18n^="services."]:not([data-i18n="services.eyebrow"]):not([data-i18n="services.title"]),
+html[lang="en"] [data-i18n^="method.step"],
+html[lang="en"] [data-i18n^="results."]:not([data-i18n="results.eyebrow"]):not([data-i18n="results.title"]) {
+  font-size: 0 !important;
+  line-height: 0 !important;
+}
+
+html[lang="en"] [data-i18n^="services."]::after,
+html[lang="en"] [data-i18n^="method.step"]::after,
+html[lang="en"] [data-i18n^="results."]::after {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+html[lang="en"] h3[data-i18n]::after {
+  font-size: 1.15rem;
+  line-height: 1.18;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+html[lang="en"] [data-i18n="services.audit.title"]::after { content: "DevSecOps Audit"; }
+html[lang="en"] [data-i18n="services.audit.text"]::after { content: "We detect risks across CI/CD, dependencies, secrets, containers, IaC, cloud and infrastructure."; }
+html[lang="en"] [data-i18n="services.pipelines.title"]::after { content: "Secure pipelines"; }
+html[lang="en"] [data-i18n="services.pipelines.text"]::after { content: "We design CI/CD flows with quality gates, SAST, SCA, IaC scanning, container scanning, SBOM and artifact signing."; }
+html[lang="en"] [data-i18n="services.cloud.title"]::after { content: "Cloud & Kubernetes"; }
+html[lang="en"] [data-i18n="services.cloud.text"]::after { content: "Architecture, hardening, deployment, observability and operation of cloud, Kubernetes and infrastructure-as-code environments."; }
+html[lang="en"] [data-i18n="services.automation.title"]::after { content: "Secure automation"; }
+html[lang="en"] [data-i18n="services.automation.text"]::after { content: "We automate workflows, runbooks, alerts, integrations, reporting and technical processes with control and traceability."; }
+html[lang="en"] [data-i18n="services.training.title"]::after { content: "Team training"; }
+html[lang="en"] [data-i18n="services.training.text"]::after { content: "Hands-on workshops in DevSecOps, cloud, Kubernetes, security, automation, applied AI, LLMOps and MLOps."; }
+html[lang="en"] [data-i18n="services.agentic.title"]::after { content: "Enterprise agentification"; }
+html[lang="en"] [data-i18n="services.agentic.text"]::after { content: "We design AI agents, internal copilots and multi-agent workflows connected to processes, data, APIs and internal tools."; }
+html[lang="en"] [data-i18n="services.secure_agents.title"]::after { content: "Secure AI Agents"; }
+html[lang="en"] [data-i18n="services.secure_agents.text"]::after { content: "We secure AI agents with threat modeling, permission control, sandboxing, guardrails, auditability and traceability."; }
+html[lang="en"] [data-i18n="services.rag.title"]::after { content: "Secure RAG"; }
+html[lang="en"] [data-i18n="services.rag.text"]::after { content: "We design enterprise RAG with access control, document classification, source traceability and data leakage protection."; }
+html[lang="en"] [data-i18n="services.llmops.title"]::after { content: "LLMOps"; }
+html[lang="en"] [data-i18n="services.llmops.text"]::after { content: "We operate LLM flows with evaluation, observability, prompt registry, guardrails, testing, cost control and red teaming."; }
+html[lang="en"] [data-i18n="services.mlops.title"]::after { content: "MLOps & Model Governance"; }
+html[lang="en"] [data-i18n="services.mlops.text"]::after { content: "ML pipelines, model registry, dataset versioning, drift monitoring, secure deployment and model lifecycle governance."; }
+html[lang="en"] [data-i18n="services.ai_security.title"]::after { content: "AI Security & Governance"; }
+html[lang="en"] [data-i18n="services.ai_security.text"]::after { content: "AI audits, LLM red teaming, internal policies, vendor assessment, embedding security and risk governance."; }
+html[lang="en"] [data-i18n="services.strategy.title"]::after { content: "Technology strategy"; }
+html[lang="en"] [data-i18n="services.strategy.text"]::after { content: "Roadmaps, enterprise architecture, use-case prioritization, CTO advisory and implementation plans with clear deliverables."; }
+
+html[lang="en"] [data-i18n="method.step1.title"]::after { content: "Diagnostic"; }
+html[lang="en"] [data-i18n="method.step1.text"]::after { content: "We analyze delivery, cloud, security, automation, data, AI and processes to identify gaps and opportunities."; }
+html[lang="en"] [data-i18n="method.step2.title"]::after { content: "Architecture"; }
+html[lang="en"] [data-i18n="method.step2.text"]::after { content: "We design the DevSecOps, cloud, agentic AI, RAG, LLMOps, MLOps, integration and governance architecture."; }
+html[lang="en"] [data-i18n="method.step3.title"]::after { content: "Security"; }
+html[lang="en"] [data-i18n="method.step3.text"]::after { content: "We apply threat modeling, hardening, permissions, guardrails, quality gates, traceability and security policies."; }
+html[lang="en"] [data-i18n="method.step4.title"]::after { content: "Implementation"; }
+html[lang="en"] [data-i18n="method.step4.text"]::after { content: "We build pipelines, infrastructure, agents, connectors, automations, dashboards and LLM flows."; }
+html[lang="en"] [data-i18n="method.step5.title"]::after { content: "Operation"; }
+html[lang="en"] [data-i18n="method.step5.text"]::after { content: "We deploy, observe and measure security, quality, costs, latency, performance and operational health."; }
+html[lang="en"] [data-i18n="method.step6.title"]::after { content: "Evolution"; }
+html[lang="en"] [data-i18n="method.step6.text"]::after { content: "We transfer knowledge and iterate platforms, agents, prompts, datasets, models, workflows and controls."; }
+
+html[lang="en"] [data-i18n="results.risk.title"]::after { content: "Less risk"; }
+html[lang="en"] [data-i18n="results.risk.text"]::after { content: "Fewer vulnerabilities, stronger controls, safer agents, governed RAG and continuous compliance."; }
+html[lang="en"] [data-i18n="results.speed.title"]::after { content: "More speed"; }
+html[lang="en"] [data-i18n="results.speed.text"]::after { content: "Faster pipelines, real automation, operational agents and fewer manual processes."; }
+html[lang="en"] [data-i18n="results.control.title"]::after { content: "More control"; }
+html[lang="en"] [data-i18n="results.control.text"]::after { content: "Observability, evaluation, versioning, traceability and governance for delivery, cloud, AI, LLMs and ML models."; }
