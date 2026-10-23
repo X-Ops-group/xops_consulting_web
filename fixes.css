@@ -395,3 +395,100 @@ html[lang="en"] [data-i18n="results.speed.title"]::after { content: "More speed"
 html[lang="en"] [data-i18n="results.speed.text"]::after { content: "Faster pipelines, real automation, operational agents and fewer manual processes."; }
 html[lang="en"] [data-i18n="results.control.title"]::after { content: "More control"; }
 html[lang="en"] [data-i18n="results.control.text"]::after { content: "Observability, evaluation, versioning, traceability and governance for delivery, cloud, AI, LLMs and ML models."; }
+
+
+/* Corporate identity disclosure and supporting legal pages.
+   Language visibility follows the existing homepage language selector. */
+html:not([lang="en"]) .locale-en,
+html[lang="en"] .locale-es {
+  display: none !important;
+}
+
+.company-disclosure {
+  display: grid;
+  grid-template-columns: minmax(190px, 0.7fr) minmax(0, 1.5fr);
+  gap: clamp(16px, 4vw, 48px);
+  margin: 50px 0 0;
+  padding: clamp(22px, 4vw, 38px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: rgba(247, 250, 255, 0.92);
+}
+.company-disclosure h2 {
+  margin: 8px 0 0;
+  font-size: clamp(1.45rem, 2.5vw, 2rem);
+  letter-spacing: -0.04em;
+}
+.company-disclosure__text p {
+  color: var(--navy-800);
+  line-height: 1.65;
+  margin: 0 0 14px;
+  overflow-wrap: anywhere;
+}
+.company-disclosure__link,
+.legal-page a:not(.brand) {
+  color: var(--blue-600);
+  font-weight: 700;
+}
+.footer-identity {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 540px;
+}
+.footer-disclosure {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 500;
+  line-height: 1.6;
+  margin: 0;
+}
+.site-footer .footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  row-gap: 12px;
+  column-gap: 20px;
+  font-size: 0.88rem;
+}
+.legal-page .site-header { justify-content: space-between; }
+.legal-page .legal-back {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.legal-page .legal-content {
+  max-width: 870px;
+  margin: 30px auto 70px;
+}
+.legal-page h1 {
+  margin: 14px 0 18px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.045em;
+}
+.legal-page h2 {
+  margin: 34px 0 12px;
+  font-size: clamp(1.25rem, 2.2vw, 1.55rem);
+}
+.legal-page p,
+.legal-page li { color: var(--navy-800); line-height: 1.8; }
+.legal-page .legal-summary {
+  padding: 24px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  background: var(--fog-50);
+}
+.legal-page .legal-facts { padding: 0; list-style: none; }
+.legal-page .legal-facts li { padding: 10px 0; border-bottom: 1px solid var(--line); }
+.legal-page .legal-facts strong { display: inline-block; min-width: 180px; }
+@media (max-width: 900px) {
+  .company-disclosure { grid-template-columns: 1fr; }
+  .site-footer { flex-wrap: wrap; align-items: flex-start; }
+  .site-footer .footer-links { justify-content: flex-start; }
+}
+@media (max-width: 720px) {
+  .legal-page .site-header { gap: 20px; }
+  .legal-page .legal-content { margin-top: 18px; }
+  .legal-page .legal-facts strong { display: block; min-width: 0; }
+}
