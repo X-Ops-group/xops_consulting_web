@@ -59,3 +59,17 @@ This can be deployed directly to GitHub Pages, Netlify, Vercel, Cloudflare Pages
 ## Contact links
 
 The CTAs currently point to `mailto:consulting@xopsgroup.com`.
+
+
+## Contracting entity and merchant-verification disclosure
+
+For consulting services offered through this site, **X-Ops Consulting** is the customer-facing business name and **Odin Hermes & Danu Technology Solutions LLC (United States)** is the service provider, contracting party and invoicing entity unless a signed client agreement expressly states otherwise.
+
+- Legal/business enquiries: `administration@ohdts.com`
+- Consulting enquiries: `consulting@xopsgroup.com`
+- Public business relationship: `company.html` and the homepage identity disclosure.
+- Privacy notice: `privacy.html` (review against the production hosting, analytics, email and data-handling configuration before merge).
+
+This wording does **not** claim that X-Ops Consulting is a legally registered DBA or registered trademark. A website disclosure is supporting merchant-verification evidence, **not** proof of incorporation, trademark rights, DBA filing, domain ownership or authorization to accept payments.
+
+Before publishing, the responsible company representative should confirm that consulting contracts and invoices are actually issued by Odin Hermes & Danu Technology Solutions LLC; if another entity supplies a service, use the entity named in that specific agreement. Do not commit incorporation documents, EIN confirmation letters, IDs, banking records, or other confidential KYB evidence to this public repository.
